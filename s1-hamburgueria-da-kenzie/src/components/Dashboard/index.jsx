@@ -47,6 +47,10 @@ const Dashboard = () => {
     setCurrentSale(newArr);
   }
 
+  function deleteAll() {
+    setCurrentSale([]);
+  }
+
   return (
     <main>
       <Header searchProducts={searchProducts}></Header>
@@ -60,6 +64,7 @@ const Dashboard = () => {
           currentSale={currentSale}
           cartTotal={cartTotal}
           deleteProduct={deleteProduct}
+          deleteAll={deleteAll}
         ></Cart>
       </section>
     </main>

@@ -1,7 +1,7 @@
 import React from "react";
 import { CartTotalSection } from "./styles";
 
-const CartTotal = ({ cartTotal }) => {
+const CartTotal = ({ cartTotal, deleteAll }) => {
   const rounded = Math.round(cartTotal * 100) / 100;
   return (
     <CartTotalSection>
@@ -9,7 +9,7 @@ const CartTotal = ({ cartTotal }) => {
         <p>Total</p>
         <span>R${rounded}</span>
       </div>
-      <button>Remover todos</button>
+      <button onClick={() => deleteAll()}>Remover todos</button>
     </CartTotalSection>
   );
 };
