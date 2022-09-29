@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import CartTotal from "./CartTotal";
 import { CartSection } from "./style";
 
-const Cart = ({ currentSale, cartTotal, deleteProduct }) => {
+const Cart = ({ currentSale, cartTotal, deleteProduct, deleteAll }) => {
   return (
     <CartSection>
       <div className="welcomeDiv">
@@ -25,7 +25,7 @@ const Cart = ({ currentSale, cartTotal, deleteProduct }) => {
         )}
       </ul>
       {currentSale.length ? (
-        <CartTotal cartTotal={cartTotal}></CartTotal>
+        <CartTotal cartTotal={cartTotal} deleteAll={deleteAll}></CartTotal>
       ) : (
         <></>
       )}
