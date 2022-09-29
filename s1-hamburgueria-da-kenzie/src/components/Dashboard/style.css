@@ -1,0 +1,9 @@
+@media screen and (min-width: 768px) {
+  .mainInfo {
+    margin: 30px auto 0 auto;
+    width: 84%;
+    display: flex;
+    padding: 0 50px;
+    justify-content: space-between;
+  }
+}

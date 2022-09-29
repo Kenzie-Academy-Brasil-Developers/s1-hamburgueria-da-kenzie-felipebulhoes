@@ -32,4 +32,9 @@ export const CartSection = styled.section`
     display: flex;
     justify-content: center;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    max-width: 500px;
+  }
 `;

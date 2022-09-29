@@ -3,6 +3,7 @@ import api from "../../services/api";
 import Header from "../Header/index";
 import ProductList from "../ProductList";
 import Cart from "../Cart";
+import "./style.css";
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
@@ -49,16 +50,18 @@ const Dashboard = () => {
   return (
     <main>
       <Header searchProducts={searchProducts}></Header>
-      <ProductList
-        products={products}
-        filteredProducts={filteredProducts}
-        HandleClick={HandleClick}
-      ></ProductList>
-      <Cart
-        currentSale={currentSale}
-        cartTotal={cartTotal}
-        deleteProduct={deleteProduct}
-      ></Cart>
+      <section className="mainInfo">
+        <ProductList
+          products={products}
+          filteredProducts={filteredProducts}
+          HandleClick={HandleClick}
+        ></ProductList>
+        <Cart
+          currentSale={currentSale}
+          cartTotal={cartTotal}
+          deleteProduct={deleteProduct}
+        ></Cart>
+      </section>
     </main>
   );
 };
