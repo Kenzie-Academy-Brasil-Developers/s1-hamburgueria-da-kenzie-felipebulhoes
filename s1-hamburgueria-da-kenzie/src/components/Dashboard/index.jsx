@@ -4,6 +4,8 @@ import Header from "../Header/index";
 import ProductList from "../ProductList";
 import Cart from "../Cart";
 import "./style.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
@@ -19,7 +21,7 @@ const Dashboard = () => {
     const produtoEncontrado = products.find((prod) => prod.id === id);
     const produtoIncluido = currentSale.includes(produtoEncontrado);
     produtoIncluido
-      ? alert("Já estou na lista")
+      ? toast.warn("Este item já está no carrinho", { autoClose: 2000 })
       : setCurrentSale([...currentSale, produtoEncontrado]);
   }
 
@@ -66,6 +68,7 @@ const Dashboard = () => {
           deleteProduct={deleteProduct}
           deleteAll={deleteAll}
         ></Cart>
+        <ToastContainer position="top-center" />
       </section>
     </main>
   );
